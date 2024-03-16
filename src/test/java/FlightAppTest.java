@@ -236,21 +236,21 @@ public class FlightAppTest {
      * updateFlight method of the mockFlightDAO was called.
      */
     @Test
-    public void flightService_UpdateFlightTest1(){
-        List<Flight> allFlightsReturned = new ArrayList<>();
-        allFlightsReturned.add(new Flight(801, "tampa", "dallas"));
-        allFlightsReturned.add(new Flight(802, "tampa", "morgantown"));
-        allFlightsReturned.add(new Flight(803, "tampa", "reston"));
-        allFlightsReturned.add(new Flight(804, "tampa", "dallas"));
-        allFlightsReturned.add(new Flight(805, "dallas", "morgantown"));
-        Flight f801 = new Flight( "dallas", "morgantown");
-        Flight expectedFlight = new Flight(801, "dallas", "morgantown");
-        Mockito.when(mockFlightDAO.getAllFlights()).thenReturn(allFlightsReturned);
-        Mockito.when(mockFlightDAO.getFlightById(801)).thenReturn(expectedFlight);
-
-        Flight actualFlight = flightService.updateFlight(801, f801);
-        Assert.assertEquals(expectedFlight, actualFlight);
-    }
+         public void flightService_UpdateFlightTest1(){
+             List<Flight> allFlightsReturned = new ArrayList<>();
+             allFlightsReturned.add(new Flight(801, "tampa", "dallas"));
+             allFlightsReturned.add(new Flight(802, "tampa", "morgantown"));
+             allFlightsReturned.add(new Flight(803, "tampa", "reston"));
+             allFlightsReturned.add(new Flight(804, "tampa", "dallas"));
+             allFlightsReturned.add(new Flight(805, "dallas", "morgantown"));
+             Flight f801 = new Flight( "dallas", "morgantown");
+             Flight expectedFlight = new Flight(801, "dallas", "morgantown");
+             Mockito.when(mockFlightDAO.getAllFlights()).thenReturn(allFlightsReturned);
+             Mockito.when(mockFlightDAO.getFlightById(801)).thenReturn(expectedFlight);
+     
+             Flight actualFlight = flightService.updateFlight(801, f801);
+             Assert.assertEquals(expectedFlight, actualFlight);
+         }
 
     /**
      * When a flight does not exist, attempting to update it should return null. Also, verify that
