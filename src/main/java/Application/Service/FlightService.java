@@ -71,15 +71,15 @@ public class FlightService {
      */
     public Flight updateFlight(int flight_id, Flight flight){
         Flight existingFlight = flightDAO.getFlightById(flight_id);
-        if (existingFlight != null) {
-            flightDAO.updateFlight(flight_id, flight);
-            return flightDAO.getFlightById(flight_id);
-        } else {
-            return null; 
-        }
+        if (existingFlight == null) {
+            
+            return null;
+        } 
+            return existingFlight; 
+        
     
 
-    }
+}
 
     /**
     
